@@ -90,7 +90,7 @@ async function main() {
       },
     ];
 
-    prisma.product.createMany({
+    await prisma.product.createMany({
       data: mouses,
     });
 
@@ -217,7 +217,7 @@ async function main() {
           "https://fsw-store.s3.sa-east-1.amazonaws.com/01_logi-vibe.png",
           "https://fsw-store.s3.sa-east-1.amazonaws.com/02_logi-vibe.png",
           "https://fsw-store.s3.sa-east-1.amazonaws.com/03_logi-vibe.png",
-          "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-vibe.png",
+          "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-vibe.png"
         ],
         basePrice: 750,
         categoryId: headphonesCategory.id,
