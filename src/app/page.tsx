@@ -1,19 +1,21 @@
-import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
-import { MenuIcon } from 'lucide-react'
-import Image from 'next/image'
+import Image from "next/image";
+import Categories from "./components/home/categories";
 
 export default function Home() {
   return (
-    <div className='p-5'>
-      <Image 
-        src='/banner-home-01.png'
+    <div className="p-5">
+      <Image
+        src="/banner-home-01.png"
         width={0}
         height={0}
-        className='h-auto w-full'
-        sizes='100vw'
-        alt='Até 55% de desconto esse mês!'
+        className="h-auto w-full"
+        sizes="100vw"
+        alt="Até 55% de desconto esse mês!"
       />
+
+      <div className="mt-8">
+        <Categories />
+      </div>
     </div>
-  )
+  );
 }
