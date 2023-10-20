@@ -1,11 +1,12 @@
 import { ComponentProps } from "react";
 
 const SectionTitle = ({ children, ...props }: ComponentProps<"p">) => {
-  return (
+  return(
     <p className="mb-3 pl-5 font-bold uppercase" {...props}>
-      {children}
+        {children}
     </p>
-  );
+  )
+  
 };
 
 export default SectionTitle;
