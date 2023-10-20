@@ -1,5 +1,5 @@
 import ProductItem from "@/components/ui/product-item";
-import { computeProductTotalPrice } from "@/helpers/product";
+import { computeProducTotalPrice } from "@/helpers/product";
 import { Product } from "@prisma/client";
 
 interface ProductListProps {
@@ -8,12 +8,12 @@ interface ProductListProps {
 
 const ProductList = ({ products }: ProductListProps) => {
   return (
-    <div className="flex w-full gap-4 overflow-x-auto px-5 [&::-webkit-scrollbar]:hidden">
+    <div className="flex w-full gap-4 overflow-x-auto px-5">
+      <div className="w-[170px] max-w-[170px] flex gap-5">
       {products.map((product) => (
-        <div key={product.id} className="w-[170px] max-w-[170px]">
-          <ProductItem product={computeProductTotalPrice(product)} />
-        </div>
+        <ProductItem key={product.id} product={computeProducTotalPrice(product)} />
       ))}
+      </div>      
     </div>
   );
 };
