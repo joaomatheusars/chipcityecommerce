@@ -1,7 +1,13 @@
 import Image from "next/image";
-import Categories from "./components/home/categories";
+import { prismaClient } from "@/lib/prisma";
+import Categories from "./(home)/components/categories";
+import ProductList from "./(home)/components/product-list";
 
-export default function Home() {
+
+export default async function Home() {
+
+  const deals = await prismaClient.product.findMany();
+
   return (
     <div className="p-5">
       <Image
@@ -15,6 +21,10 @@ export default function Home() {
 
       <div className="mt-8">
         <Categories />
+      </div>
+
+      <div>
+        
       </div>
     </div>
   );
