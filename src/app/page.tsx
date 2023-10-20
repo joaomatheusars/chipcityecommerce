@@ -12,15 +12,21 @@ export default async function Home() {
         gt: 0,
       },
     },
-    orderBy: {
-      
-    }
+    orderBy: {},
   });
 
   const keyboards = await prismaClient.product.findMany({
     where: {
       category: {
         slug: "keyboards",
+      },
+    },
+  });
+
+  const mouses = await prismaClient.product.findMany({
+    where: {
+      category: {
+        slug: "mouses",
       },
     },
   });
@@ -55,6 +61,11 @@ export default async function Home() {
         src="/banner-home-03.png"
         alt="Até 55% de desconto em mouses!"
       />
+
+      <div>
+        <SectionTitle>Mouse</SectionTitle>
+        <ProductList products={mouses} />
+      </div>
     </div>
   );
 }
