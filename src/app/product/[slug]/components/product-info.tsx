@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button";
 import DiscountBadge from "@/components/ui/discount-badge";
 import { ProductWithTotalPrice } from "@/helpers/product";
-import { Product } from "@prisma/client";
 import {
   ArrowLeftIcon,
   ArrowRight,
