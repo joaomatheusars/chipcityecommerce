@@ -1,38 +1,16 @@
-import { CartContext, CartProduct } from "@/providers/cart";
+import { CartProduct } from "@/providers/cart";
 import Image from "next/image";
 import { Button } from "./button";
 import { ArrowLeftIcon, ArrowRightIcon, TrashIcon } from "lucide-react";
-import { useContext } from "react";
 
 interface CartItemProps {
   product: CartProduct;
 }
-
 const CartItem = ({ product }: CartItemProps) => {
-  const {
-    decreaseProductQuantity,
-    increaseProductQuantity,
-    removeProductFromCart,
-  } = useContext(CartContext);
-
-  const handleDecreaseProductQuantityClick = () => {
-    decreaseProductQuantity(product.id);
-  };
-
-  const handleIncreaseProductQuantityClick = () => {
-    increaseProductQuantity(product.id);
-  };
-
-  const handleRemoveProductClick = () => {
-    removeProductFromCart(product.id);
-  };
-
   return (
-    <div className="flex items-center justify-between">
+    <div className="mt-8 flex items-center justify-between">
       <div className="flex items-center gap-4">
-        {/* PARTE DIREITA (FOTO E NOME) */}
-
-        <div className="flex h-[77px] w-[77px] items-center justify-center rounded-lg bg-accent">
+        <div className="flex h-[77px] w-[77px] items-center justify-center rounded-lg bg-accent ">
           <Image
             src={product.imageUrls[0]}
             width={0}
@@ -42,7 +20,6 @@ const CartItem = ({ product }: CartItemProps) => {
             className="h-auto max-h-[70%] w-auto max-w-[80%]"
           />
         </div>
-
         <div className="flex flex-col">
           <p className="text-xs">{product.name}</p>
 
@@ -56,33 +33,22 @@ const CartItem = ({ product }: CartItemProps) => {
               </p>
             )}
           </div>
-
-          <div className="flex items-center gap-1">
-            <Button
-              size="icon"
-              variant="outline"
-              className="h-8 w-8"
-              onClick={handleDecreaseProductQuantityClick}
-            >
+          <div className="flex items-center gap-2">
+            <Button size="icon" variant="outline" className="h-8 w-8">
               <ArrowLeftIcon size={16} />
             </Button>
 
             <span className="text-xs">{product.quantity}</span>
 
-            <Button
-              size="icon"
-              variant="outline"
-              className="h-8 w-8"
-              onClick={handleIncreaseProductQuantityClick}
-            >
+            <Button size="icon" variant="outline" className="h-8 w-8">
               <ArrowRightIcon size={16} />
             </Button>
           </div>
         </div>
       </div>
 
-      <Button size="icon" variant="outline" onClick={handleRemoveProductClick}>
-        <TrashIcon size={16} />
+      <Button size="icon" variant="outline">
+        <TrashIcon size={16}/>
       </Button>
     </div>
   );

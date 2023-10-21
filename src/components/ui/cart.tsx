@@ -2,9 +2,11 @@ import { Heading1, ShapesIcon } from "lucide-react";
 import { Badge } from "./badge";
 import { useContext } from "react";
 import { CartContext } from "@/providers/cart";
+import CartItem from "./cart-item";
+import { computeProducTotalPrice } from "@/helpers/product";
 
 const Cart = () => {
-  const {products} = useContext(CartContext)
+  const { products } = useContext(CartContext);
   return (
     <div>
       <Badge
@@ -15,9 +17,16 @@ const Cart = () => {
         Shopping
       </Badge>
 
-    {products.map(product => (<h1 key={product.id}>{product.name}</h1>))}
+      <div className="flex flex-col gap-5">
+        {products.map((product) => (
+          <CartItem
+            key={product.id}
+            product={computeProducTotalPrice(product as any) as any}
+          />
+        ))}
+      </div>
     </div>
   );
-}
- 
+};
+
 export default Cart;
