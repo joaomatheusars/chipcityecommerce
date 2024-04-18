@@ -94,15 +94,22 @@ const Header = () => {
               </Button>
             )}
 
-            <Button variant="outline" className="w-full justify-start gap-2">
-              <HomeIcon size={16} />
-              Início
-            </Button>
+            <Link href="/">
+              <SheetClose asChild>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start gap-2"
+                >
+                  <HomeIcon size={16} />
+                  Início
+                </Button>
+              </SheetClose>
+            </Link>
 
-            <Button variant="outline" className="w-full justify-start gap-2">
+            {/* <Button variant="outline" className="w-full justify-start gap-2">
               <PercentIcon size={16} />
               Ofertas
-            </Button>
+            </Button> */}
 
             <SheetClose asChild>
               <Link href="/catalog">
@@ -121,21 +128,23 @@ const Header = () => {
 
       <Link href="/">
         <h1 className="text-lg font-semibold">
-          <span className="text-primary">FSW</span> Store
+          <span className="text-primary">Chip</span> City
         </h1>
       </Link>
 
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button size="icon" variant="outline">
-            <ShoppingCartIcon />
-          </Button>
-        </SheetTrigger>
+      
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button size="icon" variant="outline">
+              <ShoppingCartIcon />
+            </Button>
+          </SheetTrigger>
 
-        <SheetContent>
-          <Cart/>
-        </SheetContent>
-      </Sheet>
+          <SheetContent>
+            <Cart />
+          </SheetContent>
+        </Sheet>
+      
     </Card>
   );
 };

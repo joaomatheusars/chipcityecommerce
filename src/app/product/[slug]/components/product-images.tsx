@@ -27,7 +27,7 @@ const ProductImages = ({ imagesUrls, name }: ProductImagesProps) => {
         />
       </div>
 
-      <div className="mt-8 grid grid-cols-4 gap-4 px-5">
+      <div className="mt-8 grid grid-cols-4 gap-4 px-5 md:px-0">
         {imagesUrls.map((imagesUrl) => (
           <button
             key={imagesUrl}
