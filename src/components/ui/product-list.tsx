@@ -13,6 +13,7 @@ const ProductList = ({ products }: ProductListProps) => {
         {products.map((product) => (
           <div className="flex" key={product.id}>
             <ProductItem
+            key={product.id}
               product={computeProducTotalPrice(product)}
             />
           </div>
