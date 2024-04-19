@@ -23,7 +23,7 @@
     "@stripe/stripe-js": "^2.1.9",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
-    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react": "7.28.0",
     "lucide-react": "^0.287.0",
     "next": "13.5.5",
     "next-auth": "^4.23.2",
