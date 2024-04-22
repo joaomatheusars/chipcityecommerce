@@ -132,7 +132,7 @@ const Header = () => {
         </h1>
       </Link>
 
-      
+      {typeof window !== 'undefined' && (
         <Sheet>
           <SheetTrigger asChild>
             <Button size="icon" variant="outline">
@@ -144,6 +144,8 @@ const Header = () => {
             <Cart />
           </SheetContent>
         </Sheet>
+      )}
+        
       
     </Card>
   );
